@@ -1,0 +1,144 @@
+{
+  "title": "RH classical starter collection",
+  "date": "2026-11-17",
+  "nodes": [
+    {
+      "id": "RH",
+      "label": "RH",
+      "statement": "Every nontrivial zero rho=beta+i gamma of zeta has beta=1/2.",
+      "family": "core",
+      "status": "open",
+      "definition_guards": [],
+      "universe": "actual_Riemann_zeta"
+    },
+    {
+      "id": "LIP",
+      "label": "Li positivity",
+      "statement": "For xi(s)=s(s-1)pi^(-s/2)Gamma(s/2)zeta(s)/2, lambda_n=(n-1)!⁻¹ [d^n/ds^n (s^(n-1)log xi(s))] at s=1 is nonnegative for every integer n≥1.",
+      "family": "equivalents",
+      "status": "open",
+      "definition_guards": [],
+      "universe": "actual_Riemann_zeta"
+    },
+    {
+      "id": "WEIL",
+      "label": "Weil positivity",
+      "statement": "Let z run with multiplicity over zeros of xi(1/2-i z), and hat(phi)(z)=integral_R phi(t)e^(i z t)dt. W(phi)=sum_z hat(phi)(z). For every complex phi in C_c^∞(R), W(phi*tilde(phi))≥0, where tilde(phi)(t)=conjugate(phi(-t)).",
+      "family": "equivalents",
+      "status": "open",
+      "definition_guards": [],
+      "universe": "actual_Riemann_zeta",
+      "formula_latex": "W(\\varphi*\\widetilde\\varphi)\\ge0\\quad\\text{for every }\\varphi\\in C_c^\\infty(\\mathbb R;\\mathbb C),\\qquad\\widetilde\\varphi(t)=\\overline{\\varphi(-t)}."
+    },
+    {
+      "id": "NB",
+      "label": "Nyman–Beurling closure",
+      "statement": "In L²((0,∞),dx), 1_(0,1] belongs to the closure of the complex span of { fractional_part(1/(n x)) : n∈N }.",
+      "family": "equivalents",
+      "status": "open",
+      "definition_guards": [],
+      "universe": "actual_Riemann_zeta",
+      "formula_latex": "\\mathbf1_{(0,1]}\\in\\overline{\\operatorname{span}_{\\mathbb C}\\bigl\\{x\\mapsto\\{1/(nx)\\}:n\\in\\mathbb N_{>0}\\bigr\\}}^{\\,L^2((0,\\infty),dx)}."
+    }
+  ],
+  "edges": [
+    {
+      "id": "E01",
+      "inputs": [
+        "RH"
+      ],
+      "output": "LIP",
+      "logic": "implication",
+      "status": "published",
+      "sources": [
+        "LI"
+      ],
+      "locator": "Theorem 1"
+    },
+    {
+      "id": "E02",
+      "inputs": [
+        "LIP"
+      ],
+      "output": "RH",
+      "logic": "implication",
+      "status": "published",
+      "sources": [
+        "LI"
+      ],
+      "locator": "Theorem 1"
+    },
+    {
+      "id": "E03",
+      "inputs": [
+        "RH"
+      ],
+      "output": "WEIL",
+      "logic": "implication",
+      "status": "published",
+      "sources": [
+        "WEIL"
+      ],
+      "locator": "§3.2"
+    },
+    {
+      "id": "E04",
+      "inputs": [
+        "WEIL"
+      ],
+      "output": "RH",
+      "logic": "implication",
+      "status": "published",
+      "sources": [
+        "WEIL"
+      ],
+      "locator": "§3.2"
+    },
+    {
+      "id": "E05",
+      "inputs": [
+        "RH"
+      ],
+      "output": "NB",
+      "logic": "implication",
+      "status": "published",
+      "sources": [
+        "NB"
+      ],
+      "locator": "Theorem 1.1"
+    },
+    {
+      "id": "E06",
+      "inputs": [
+        "NB"
+      ],
+      "output": "RH",
+      "logic": "implication",
+      "status": "published",
+      "sources": [
+        "NB"
+      ],
+      "locator": "Theorem 1.1"
+    }
+  ],
+  "sources": [
+    {
+      "id": "LI",
+      "title": "Li, The Positivity of a Sequence of Numbers and the Riemann Hypothesis",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0022314X97921375",
+      "locator": "Theorem 1, (1.1)"
+    },
+    {
+      "id": "WEIL",
+      "title": "Suzuki, Aspects of the screw function corresponding to the Riemann zeta-function",
+      "url": "https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/jlms.12785",
+      "locator": "§3.2, (3.3)–(3.5)"
+    },
+    {
+      "id": "NB",
+      "title": "Báez-Duarte, A strengthening of the Nyman–Beurling criterion for the Riemann hypothesis",
+      "url": "https://arxiv.org/pdf/math/0202141",
+      "locator": "Theorem 1.1"
+    }
+  ]
+}
